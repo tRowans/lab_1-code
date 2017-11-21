@@ -1,10 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import stats
 
 def getIV(f):
     dat = np.genfromtxt(f,skip_header=11)   #Get all data from file
     dat = dat[:,0:2]   #take only I and V
-    return dat
+    return dat 
 
 def plotIV(f):
     dat = getIV(f)
