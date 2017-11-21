@@ -16,5 +16,3 @@ def test_getRT():
     assert len(dat[0]) == len(dat[1]) == 886
     assert dat[0][0] > dat[0][-1]
     assert dat[1][0] > dat[1][-1]
-    assert all(dat[0]>0)
-    assert all(dat[1]>0)

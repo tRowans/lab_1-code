@@ -9,14 +9,14 @@ def getRB(f,nf,nl):
     B = []
     for i in range(nf,nl):
         xy = getIV(f+str(i)+".txt")
-        R.append(stats.linregress(xy[0,:],xy[1,:])[0])
+        R.append(stats.linregress(xy[:,0],xy[:,1])[0])
         with open(f+str(i)+".txt", 'r') as fi:
             j = 0
             while j < 3:
                 line = fi.readline()
                 j += 1
             line = line.split("\t")
-            B.append(line[1])
+            B.append(float(line[1][0:7]))
     R = np.array(R)
     B = np.array(B)
     return (R,B)
